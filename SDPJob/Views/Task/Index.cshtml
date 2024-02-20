@@ -1,0 +1,589 @@
+﻿@using System.Globalization;
+@{
+    ViewData["Title"] = "Task";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.min.css" rel="stylesheet" />
+<style>
+    body, html {
+        overflow: hidden
+    }
+
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }
+
+</style>
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Task</h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">General</li>
+                        <li class="breadcrumb-item">System</li>
+                        <li class="breadcrumb-item active">Task</li>
+                    </ol>
+                </div>
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="email-wrap bookmark-wrap">
+            <div class="row">
+                <div class="col-4" style="overflow-y:scroll;height:550px">
+                    <div class="email-right-aside bookmark-tabcontent">
+                        <div class="card email-body radius-left">
+                            <div class="ps-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="pills-created" role="tabpanel" aria-labelledby="pills-created-tab">
+                                        <div class="card mb-0">
+                                            <div class="card-header">
+                                                <h5 class="mb-0">New Request</h5>
+                                                <button width="100px" onclick="NewTask()" class="badge-light" type="button" data-bs-toggle="modal" data-bs-target="#modalAdd"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle me-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>New Task</button>
+                                            </div>
+                                            <div class="card-body p-0">
+                                                <div class="taskadd">
+                                                    <div class="table-responsive">
+                                                        <table id="tblNewRequest" class="table table-striped table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-0">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">In Progress PG</h5>
+                                            <button width="100px" onclick="NewTask()" class="badge-light" type="button" data-bs-toggle="modal" data-bs-target="#modalAdd"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle me-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>New Task</button>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div class="taskadd">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <td>
+                                                                <p class="task_desc_0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-0">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">In Progress UI</h5>
+                                            <button width="100px" onclick="NewTask()" class="badge-light" type="button" data-bs-toggle="modal" data-bs-target="#modalAdd"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle me-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>New Task</button>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div class="taskadd">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <td>
+                                                                <p class="task_desc_0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-0">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">Waiting Test</h5>
+                                            <button width="100px" onclick="NewTask()" class="badge-light" type="button" data-bs-toggle="modal" data-bs-target="#modalAdd"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle me-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>New Task</button>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div class="taskadd">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <td>
+                                                                <p class="task_desc_0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-0">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">Complete</h5>
+                                            <button width="100px" onclick="NewTask()" class="badge-light" type="button" data-bs-toggle="modal" data-bs-target="#modalAdd"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle me-2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>New Task</button>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div class="taskadd">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <td>
+                                                                <p class="task_desc_0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8" style="overflow-y:scroll;height:550px">
+                    <div class="email-right-aside bookmark-tabcontent">
+                        <div class="card email-body radius-left">
+                            <div class="ps-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="pills-created" role="tabpanel" aria-labelledby="pills-created-tab">
+                                        <div class="card mb-0">
+                                            <div class="card-header">
+                                                <h5 class="mb-0">New Request</h5>
+                                            </div>
+                                            <div class="card-body p-0">
+                                                <div class="taskadd">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <tr>
+                                                                <td>
+                                                                    <i class="fa-solid fa-circle-check"></i><p class="task_desc_0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-0">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">In Progress PG</h5>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div class="taskadd">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <td>
+                                                                <p class="task_desc_0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-0">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">In Progress UI</h5>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div class="taskadd">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <td>
+                                                                <p class="task_desc_0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-0">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">Waiting Test</h5>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div class="taskadd">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <td>
+                                                                <p class="task_desc_0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-0">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">Complete</h5>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div class="taskadd">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <td>
+                                                                <p class="task_desc_0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade modal-bookmark" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close">                                                 </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="task-title">Assignee</label>
+                        <select class="js-data-example-ajax" name="ddlUser" id="ddlUser"></select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="sub-task">Due date</label>
+                        @{
+                            string defaultDate = DateTime.Now.ToString("dd/MM/yyyy", new CultureInfo("en-US"));
+                        }
+                        <input class="datepicker-here form-control digits" type="text" data-language="en" id="txtDueDate" value="@defaultDate">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="task-title">Project</label>
+                        <select class="js-data-example-ajax" name="ddlProject" id="ddlProject"></select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="task-title">Type</label>
+                        <select class="js-data-example-ajax" name="ddlType" id="ddlType"></select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="task-title">Description</label>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <textarea id="txtDescription" name="txtDescription" cols="30" rows="10">
+                                                </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="index_var" type="hidden" value="6">
+                    <table>
+                        <tr>
+                            <td>
+                                <button class="btn btn-secondary" id="btnAddTask" onclick="AddTask()">Add</button>
+                            </td>
+                            <td style="vertical-align: bottom;">
+                                <span class="btn btn-primary btn-file">
+                                    Upload(multiple)<input type="file" id="fileUpload" multiple>
+                                </span>
+                            </td>
+                            <td>
+                                <button class="btn btn-info" type="button" data-bs-dismiss="modal">Cancel</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Script {
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="../assets/js/datepicker/date-picker/datepicker.js"></script>
+        <script src="../assets/js/datepicker/date-picker/datepicker.en.js"></script>
+        <script src="../assets/js/datepicker/date-picker/datepicker.custom.js"></script>
+        <script src="../assets/js/select2/select2.full.min.js"></script>
+        <script src="../assets/js/select2/select2-custom.js"></script>
+        <script src="../assets/js/form-validation-custom.js"></script>
+        <script src="../assets/js/task/custom.js"></script>
+
+        <script src="../assets/js/editor/ckeditor/ckeditor.js"></script>
+        <script src="../assets/js/editor/ckeditor/adapters/jquery.js"></script>
+        <script src="../assets/js/editor/ckeditor/styles.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script>
+            var table;
+            $(document).ready(function () {
+                table = $("#tblNewRequest").DataTable({
+                    stateSave: true,
+                    autoWidth: true,
+                    processing: true,
+                    serverSide: true,
+                    paging: true,
+                    lengthMenu: [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]],
+                    pageLength: 100,
+                    pagingType: "full_numbers",
+                    lengthChange: false,
+                    searching: { regex: true },
+                    ajax: {
+                        url: "/Task/NewRequest",
+                        type: "POST",
+                        contentType: "application/json",
+                        dataType: "json",
+                        data: function (d) {
+                            return JSON.stringify(d);
+                        },
+                        success: function (response) {
+                            alert(response.taskID);
+                        },
+                        error: function (xhr, error, code) {
+                            alert(xhr);
+                            alert(error);
+                            console.log(xhr, code);
+                        }
+                    },
+                    columns: [
+                        {
+                            data: "taskID"
+                        },
+                        // {
+                        //     data: "purchaseDocID"
+                        // },
+                        // { data: "purchaseDocDate" },
+                        // { data: "saleName" },
+                        // { data: "credit" },
+                        // {
+                        //     data: null, render: function (data, type, row) {
+                        //         return '<button class="btn" onclick="Edit(' + data.purchaseID + ')"><i class="fas fa-edit"> </i></button><button class="btn" onclick="Delete(' + data.purchaseID + ')"><i class="fas fa-trash"> </i></button>';
+                        //     },
+                        //     orderable: false, "width": "5%"
+                        // },
+                    ],
+                });
+            });
+            function AddTask() {
+                if ($("#ddlUser").val() == "" || $("#ddlUser").val() == null) {
+                    return Swal.fire({
+                        title: 'Require!',
+                        text: 'Plase Input Assignee',
+                        icon: 'error',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    });
+                }
+                if ($("#ddlType").val() == "" || $("#ddlType").val() == null) {
+                    return Swal.fire({
+                        title: 'Require!',
+                        text: 'Plase Input Type',
+                        icon: 'error',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    });
+                }
+                if ($("#txtDueDate").val() == "" || $("#txtDueDate").val() == null) {
+                    return Swal.fire({
+                        title: 'Require!',
+                        text: 'Plase Input Due date',
+                        icon: 'error',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    });
+                }
+                if ($("#ddlProject").val() == "" || $("#ddlProject").val() == null) {
+                    return Swal.fire({
+                        title: 'Require!',
+                        text: 'Plase Input Project',
+                        icon: 'error',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    });
+                }
+                var txtDescription = CKEDITOR.instances["txtDescription"].getData();
+                if (txtDescription == "" || txtDescription == null) {
+                    return Swal.fire({
+                        title: 'Require!',
+                        text: 'Plase Input Description',
+                        icon: 'error',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    });
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: '/Task/AddTask',
+                    data: {
+                        "dueDate": $("#txtDueDate").val(),
+                        "ProjectID": $("#ddlProject").val(),
+                        "Assignee": $("#ddlUser").val(),
+                        "Type": $("#ddlType").val(),
+                        "Description": txtDescription
+                    },
+                    success: function (res) {
+                        $('#modalAdd').modal('hide');
+                        toastr.success('เพิ่มข้อมูลเรียบร้อย', 'ข้อความจากระบบ');
+                        /*$('#tblpurchase').DataTable().ajax.reload();*/
+                    },
+                    error: function () {
+                    }
+                });
+            }
+            function NewTask() {
+                BindDdlUser();
+                BindDdlProject();
+                BindDdlType();
+                LoadCkeditor();
+                $(".cke_editable").val('');
+                $(".footer").hide();
+            }
+            function LoadCkeditor() {
+                CKEDITOR.replace('txtDescription', {
+                    on: {
+                        contentDom: function (evt) {
+                            evt.editor.editable().on('contextmenu', function (contextEvent) {
+                                var path = evt.editor.elementPath();
+                                if (!path.contains('table')) {
+                                    contextEvent.cancel();
+                                }
+                            }, null, null, 5);
+                        }
+                    }
+                });
+            }
+
+            function BindDdlType() {
+                $("#ddlType").select2({
+                    minimumInputLength: 0,
+                    ajax: {
+                        url: '/Task/GetType',
+                        dataType: "json",
+                        type: "GET",
+                        data: function (params) {
+                            var queryParameters = {
+                                filter: params.term
+                            }
+                            return queryParameters;
+                        },
+                        processResults: function (data) {
+                            return {
+                                results: $.map(data, function (item) {
+                                    return {
+                                        text: item.typeName,
+                                        id: item.typeID
+                                    }
+                                })
+                            };
+                        }
+                    }
+                });
+            }
+            function BindDdlProject() {
+                $("#ddlProject").select2({
+                    minimumInputLength: 0,
+                    ajax: {
+                        url: '/Task/GetProject',
+                        dataType: "json",
+                        type: "GET",
+                        data: function (params) {
+                            var queryParameters = {
+                                filter: params.term
+                            }
+                            return queryParameters;
+                        },
+                        processResults: function (data) {
+                            return {
+                                results: $.map(data, function (item) {
+                                    return {
+                                        text: item.projectName,
+                                        id: item.projectID
+                                    }
+                                })
+                            };
+                        }
+                    }
+                });
+            }
+            function BindDdlUser() {
+                $("#ddlUser").select2({
+                    minimumInputLength: 0,
+                    ajax: {
+                        url: '/Task/LookUpUser',
+                        dataType: "json",
+                        type: "GET",
+                        data: function (params) {
+
+                            var queryParameters = {
+                                filter: params.term
+                            }
+                            return queryParameters;
+                        },
+                        processResults: function (data) {
+                            return {
+                                results: $.map(data, function (item) {
+                                    return {
+                                        text: item.nickName + ' ' + item.email,
+                                        id: item.userID
+                                    }
+                                })
+                            };
+                        }
+                    }
+                });
+            }
+        </script>
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

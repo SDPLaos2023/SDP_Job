@@ -1,0 +1,479 @@
+﻿ <!-- Page Sidebar Start-->
+<header class="main-nav">
+   @*  <div class="sidebar-user text-center">
+        <a class="setting-primary" href="javascript:void(0)"><i data-feather="settings"></i></a><img class="img-90 rounded-circle" src="~/assets/images/dashboard/1.png" alt="">
+        <div class="badge-bottom"><span class="badge badge-primary">New</span></div><a asp-controller="User" asp-action="UserProfile">
+            <h6 class="mt-3 f-14 f-w-600">Emay Walter</h6>
+        </a>
+        <p class="mb-0 font-roboto">Human Resources Department</p>
+        <ul>
+            <li>
+                <span><span class="counter">19.8</span>k</span>
+                <p>Follow</p>
+            </li>
+            <li>
+                <span>2 year</span>
+                <p>Experince</p>
+            </li>
+            <li>
+                <span><span class="counter">95.2</span>k</span>
+                <p>Follower </p>
+            </li>
+        </ul>
+    </div> *@
+    <nav>
+        <div class="main-navbar">
+            <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+            <div id="mainnav">
+                <ul class="nav-menu custom-scrollbar">
+                    <li class="back-btn">
+                        <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
+                    </li>
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>General</h6>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="home"></i><span>System</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Task" asp-action="Index">Task</a></li>
+                        </ul>
+                    </li>
+                    @*  <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="airplay"></i><span>Widgets</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="widgets" asp-action="Index">General</a></li>
+                            <li><a asp-controller="widgets" asp-action="chart_widget">Chart</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="layout"></i><span>Page layout</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Page_Layout" asp-action="BoxLayout">Boxed</a></li>
+                            <li><a asp-controller="Page_Layout" asp-action="RTL">RTL</a></li>
+                            <li><a asp-controller="Page_Layout" asp-action="Dark">Dark</a></li>
+                            <li><a asp-controller="Page_Layout" asp-action="FooterLight">Footer Light</a></li>
+                            <li><a asp-controller="Page_Layout" asp-action="FooterDark">Footer Dark</a></li>
+                            <li><a asp-controller="Page_Layout" asp-action="FooterFixed">Footer Fixed</a></li>
+                        </ul>
+                    </li>
+                  <li class="sidebar-main-title">
+                        <div>
+                            <h6>Components </h6>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="box"></i><span>Ui Kits</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="UIKits" asp-action="StateColor">State color</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Typography">Typography</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Avatars">Avatars</a></li>
+                            <li><a asp-controller="UIKits" asp-action="HelperClasses">helper classes</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Grid">Grid</a></li>
+                            <li><a asp-controller="UIKits" asp-action="TagAndPills">Tag & pills</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Progress">Progress</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Modal">Modal</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Alert">Alert</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Popover">Popover</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Tooltip">Tooltip</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Spinners">Spinners</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Dropdown">Dropdown</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Accordion">Accordion</a></li>
+                            <li>
+                                <a class="submenu-title" href="javascript:void(0)">Tabs<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
+                                <ul class="nav-sub-childmenu submenu-content">
+                                    <li><a asp-controller="UIKits" asp-action="BootstrapTabs">Bootstrap Tabs</a></li>
+                                    <li><a asp-controller="UIKits" asp-action="LineTabs">Line Tabs</a></li>
+                                </ul>
+                            </li>
+                            <li><a asp-controller="UIKits" asp-action="Navs">Navs</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Shadow">Shadow</a></li>
+                            <li><a asp-controller="UIKits" asp-action="Lists">Lists</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="folder-plus"></i><span>Bonus Ui</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="BonusUi" asp-action="Scrollable">Scrollable</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="TreeView">Tree view</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="BootstrapNotify">Bootstrap Notify</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="Rating">Rating</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="dropzone">dropzone</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="Tour">Tour</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="SweetAlert2">SweetAlert2</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="AnimatedModal">Animated Modal</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="OwlCarousel">Owl Carousel</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="Ribbons">Ribbons</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="Pagination">Pagination</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="Steps">Steps</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="Breadcrumb">Breadcrumb</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="RangeSlider">Range Slider</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="ImageCropper">Image cropper</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="Sticky">Sticky         </a></li>
+                            <li><a asp-controller="BonusUi" asp-action="BasicCard">Basic Card</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="CreativeCard">Creative Card</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="TabbedCard">Tabbed Card</a></li>
+                            <li><a asp-controller="BonusUi" asp-action="DraggableCard">Draggable Card</a></li>
+                            <li>
+                                <a class="submenu-title" href="javascript:void(0)">Timeline<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
+                                <ul class="nav-sub-childmenu submenu-content">
+                                    <li><a asp-controller="BonusUi" asp-action="Timeline1">Timeline 1</a></li>
+                                    <li><a asp-controller="BonusUi" asp-action="Timeline2">Timeline 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="edit-3"></i><span>Builders</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Builders" asp-action="FormBuilder1"> Form Builder 1</a></li>
+                            <li><a asp-controller="Builders" asp-action="FormBuilder2"> Form Builder 2</a></li>
+                            <li><a asp-controller="Builders" asp-action="PageBuilder">Page Builder</a></li>
+                            <li><a asp-controller="Builders" asp-action="ButtonBuilder">Button Builder</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="cloud-drizzle"></i><span>Animation</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Animation" asp-action="Animate">Animate</a></li>
+                            <li><a asp-controller="Animation" asp-action="ScrollReveal">Scroll Reveal</a></li>
+                            <li><a asp-controller="Animation" asp-action="AOSAnimation">AOS animation</a></li>
+                            <li><a asp-controller="Animation" asp-action="TiltAnimation">Tilt Animation</a></li>
+                            <li><a asp-controller="Animation" asp-action="WowAnimation">Wow Animation</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="command"></i><span>Icons</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Icons" asp-action="FlagIcon">Flag icon</a></li>
+                            <li><a asp-controller="Icons" asp-action="FontawesomeIcon">Fontawesome Icon</a></li>
+                            <li><a asp-controller="Icons" asp-action="IcoIcon">Ico Icon</a></li>
+                            <li><a asp-controller="Icons" asp-action="ThimifyIcon">Thimify Icon</a></li>
+                            <li><a asp-controller="Icons" asp-action="FeatherIcon">Feather icon</a></li>
+                            <li><a asp-controller="Icons" asp-action="WhetherIcon">Whether Icon</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="cloud"></i><span>Buttons</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Buttons" asp-action="DefaultStyle">Default Style</a></li>
+                            <li><a asp-controller="Buttons" asp-action="FlatStyle">Flat Style</a></li>
+                            <li><a asp-controller="Buttons" asp-action="EdgeStyle">Edge Style</a></li>
+                            <li><a asp-controller="Buttons" asp-action="RaisedStyle">Raised Style</a></li>
+                            <li><a asp-controller="Buttons" asp-action="ButtonGroup">Button Group</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="bar-chart"></i><span>Charts</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Charts" asp-action="ApexChart">Apex Chart</a></li>
+                            <li><a asp-controller="Charts" asp-action="GoogleChart">Google Chart</a></li>
+                            <li><a asp-controller="Charts" asp-action="SparklineChart">Sparkline chart</a></li>
+                            <li><a asp-controller="Charts" asp-action="FlotChart">Flot Chart</a></li>
+                            <li><a asp-controller="Charts" asp-action="KnobChart">Knob Chart</a></li>
+                            <li><a asp-controller="Charts" asp-action="MorrisChart">Morris Chart</a></li>
+                            <li><a asp-controller="Charts" asp-action="ChatjsChart">Chatjs Chart</a></li>
+                            <li><a asp-controller="Charts" asp-action="ChartistChart">Chartist Chart</a></li>
+                            <li><a asp-controller="Charts" asp-action="PeityChart">Peity Chart</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Forms</h6>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="sliders"></i><span>Form Controls                </span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Form" asp-action="FormValidation">Form Validation</a></li>
+                            <li><a asp-controller="Form" asp-action="BaseInput">Base Inputs</a></li>
+                            <li><a asp-controller="Form" asp-action="CheckboxAndRadio">Checkbox & Radio</a></li>
+                            <li><a asp-controller="Form" asp-action="InputGroups">Input Groups</a></li>
+                            <li><a asp-controller="Form" asp-action="MegaOptions">Mega Options</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="package"></i><span>Form Widgets</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="FormWidgets" asp-action="DatePicker">Datepicker</a></li>
+                            <li><a asp-controller="FormWidgets" asp-action="TimePicker">Timepicker</a></li>
+                            <li><a asp-controller="FormWidgets" asp-action="DateTimePicker">Datetimepicker</a></li>
+                            <li><a asp-controller="FormWidgets" asp-action="DaterangePicker">Daterangepicker</a></li>
+                            <li><a asp-controller="FormWidgets" asp-action="Touchspin">Touchspin</a></li>
+                            <li><a asp-controller="FormWidgets" asp-action="Select2">Select2</a></li>
+                            <li><a asp-controller="FormWidgets" asp-action="Switch">Switch</a></li>
+                            <li><a asp-controller="FormWidgets" asp-action="Typehead">Typeahead</a></li>
+                            <li><a asp-controller="FormWidgets" asp-action="Clipboard">Clipboard</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="layout"></i><span>Form layout</span></a>
+                        <ul class="nav-submenu menu-content">
+                             <li><a asp-controller="FormLayout" asp-action="DefaultForm">Default Forms</a></li>
+                            <li><a asp-controller="FormLayout" asp-action="FormWizard1">Form Wizard 1</a></li>
+                            <li><a asp-controller="FormLayout" asp-action="FormWizard2">Form Wizard 2</a></li>
+                            <li><a asp-controller="FormLayout" asp-action="FormWizard3">Form Wizard 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Table</h6>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="server"></i><span>Bootstrap Tables             </span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="BootstrapTables" asp-action="BasicTables">Basic Tables</a></li>
+                            <li><a asp-controller="BootstrapTables" asp-action="SizingTables">Sizing Tables</a></li>
+                            <li><a asp-controller="BootstrapTables" asp-action="BorderTables">Border Tables</a></li>
+                            <li><a asp-controller="BootstrapTables" asp-action="StylingTables">Styling Tables</a></li>
+                            <li><a asp-controller="BootstrapTables" asp-action="TableComponents">Table components</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="database"></i><span>Data Tables   </span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="DataTable" asp-action="BasicInit">Basic Init</a></li>
+                            <li><a asp-controller="DataTable" asp-action="AdvanceInit">Advance Init</a></li>
+                            <li><a asp-controller="DataTable" asp-action="Styling">Styling</a></li>
+                            <li><a asp-controller="DataTable" asp-action="Ajax">AJAX</a></li>
+                            <li><a asp-controller="DataTable" asp-action="ServerSide">Server Side</a></li>
+                            <li><a asp-controller="DataTable" asp-action="PlugIn" >Plug-in</a></li>
+                            <li><a asp-controller="DataTable" asp-action="API">API</a></li>
+                            <li><a asp-controller="DataTable" asp-action="DataSource">Data Sources</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="hard-drive"></i><span>Ex. Data Tables  </span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="ExDataTable" asp-action="Autofill">Auto Fill</a></li>
+                            <li><a asp-controller="ExDataTable" asp-action="BasicButton">Basic Button</a></li>
+                            <li><a asp-controller="ExDataTable" asp-action="ColumnReorder">Column Reorder</a></li>
+                            <li><a asp-controller="ExDataTable" asp-action="FixedHeader">Fixed Header</a></li>
+                            <li><a asp-controller="ExDataTable" asp-action="KeyTable">Key Table</a></li>
+                            <li><a asp-controller="ExDataTable" asp-action="Responsive">Responsive</a></li>
+                            <li><a asp-controller="ExDataTable" asp-action="RowReorder">Row Reorder</a></li>
+                            <li><a asp-controller="ExDataTable" asp-action="Scroller">Scroller</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" asp-controller="JsGridTable" asp-action="JsGridTable"><i data-feather="file-text"></i><span>Js Grid Table</span></a></li>
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Applications </h6>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="box"></i><span>Project                </span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Project" asp-action="projects">Project List</a></li>
+                            <li><a asp-controller="Project" asp-action="ProjectCreate">Create new </a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" asp-controller="FileManager" asp-action="FileManager"><i data-feather="git-pull-request"></i><span>File manager</span></a></li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" asp-controller="KanbanBoard" asp-action="kanbanBoard"><i data-feather="monitor"></i><span>kanban Board</span></a></li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="shopping-bag"></i><span>Ecommerce</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Ecommerce" asp-action="product">Product</a></li>
+                            <li><a asp-controller="Ecommerce" asp-action="ProductPage">Product page</a></li>
+                            <li><a asp-controller="Ecommerce" asp-action="ProductList">Product list</a></li>
+                            <li><a asp-controller="Ecommerce" asp-action="PaymentDetails">Payment Details</a></li>
+                            <li><a asp-controller="Ecommerce" asp-action="OrderHistory">Order History</a></li>
+                            <li><a asp-controller="Ecommerce" asp-action="InvoiceTemplete">Invoice</a></li>
+                            <li><a asp-controller="Ecommerce" asp-action="Cart">Cart</a></li>
+                            <li><a asp-controller="Ecommerce" asp-action="Wishlist">Wishlist</a></li>
+                            <li><a asp-controller="Ecommerce" asp-action="Checkout">Checkout</a></li>
+                            <li><a asp-controller="Ecommerce" asp-action="Pricing">Pricing</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="mail"></i><span>Email</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Email" asp-action="EmailInbox">Mail Inbox</a></li>
+                            <li><a asp-controller="Email" asp-action="EmailRead">Read mail</a></li>
+                            <li><a asp-controller="Email" asp-action="EmailCompose">Compose</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="message-circle"></i><span>Chat</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Chat" asp-action="ChatApp">Chat App</a></li>
+                            <li><a asp-controller="Chat" asp-action="VideoChat">Video chat</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="users"></i><span>Users</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="User" asp-action="UserProfile">Users Profile</a></li>
+                            <li><a asp-controller="User" asp-action="UserEdit">Users Edit</a></li>
+                            <li><a asp-controller="User" asp-action="UserCards">Users Cards</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" asp-controller="Bookmark" asp-action="Bookmark"><i data-feather="heart"></i><span>Bookmarks</span></a></li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" asp-controller="Contacts" asp-action="Contacts"><i data-feather="list"></i><span>Contacts</span></a></li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" asp-controller="Task" asp-action="Task"><i data-feather="check-square"></i><span>Tasks</span></a></li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" asp-controller="Calender" asp-action="Calender"><i data-feather="calendar"></i><span>Calender        </span></a></li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" asp-controller="SocialApp" asp-action="SocialApp"><i data-feather="zap"></i><span>Social App</span></a></li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" asp-controller="ToDo" asp-action="Todo"><i data-feather="clock"></i><span>To-Do</span></a></li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" asp-controller="Search" asp-action="Search"><i data-feather="search"></i><span>Search Result</span></a></li>
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Pages             </h6>
+                        </div>
+                    </li>
+                    <li><a class="nav-link menu-title link-nav" asp-controller="landingPage" asp-action="landingPages"><i data-feather="navigation-2"></i><span>Landing page</span></a></li>
+                    <li><a class="nav-link menu-title link-nav" asp-controller="SamplePage" asp-action="SamplePage"><i data-feather="file"></i><span>Sample page</span></a></li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" asp-controller="Internationalization" asp-action="Internationalization"><i data-feather="aperture"></i><span>Internationalization</span></a></li>
+                    <li class="dropdown"><a class="nav-link menu-title link-nav" href="~/assets/starter-kit/index.html"><i data-feather="anchor"></i><span>Starter kit   </span></a></li>
+                    <li class="mega-menu">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="layers"></i><span>Others</span></a>
+                        <div class="mega-menu-container menu-content">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col mega-box">
+                                        <div class="link-section">
+                                            <div class="submenu-title">
+                                                <h5>Error Page</h5>
+                                            </div>
+                                            <div class="submenu-content opensubmegamenu">
+                                                <ul>
+                                                    <li><a onclick="window.open('@Url.Action("ErrorPage1", "ErrorPage")')" href="#" target="_blank">Error page 1</a></li>
+                                                    <li><a onclick="window.open('@Url.Action("ErrorPage2", "ErrorPage")')" href="#" target="_blank">Error page 2</a></li>
+                                                    <li><a onclick="window.open('@Url.Action("ErrorPage3", "ErrorPage")')" href="#" target="_blank">Error page 3</a></li>
+                                                    <li><a onclick="window.open('@Url.Action("ErrorPage4", "ErrorPage")')" href="#" target="_blank">Error page 4</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col mega-box">
+                                        <div class="link-section">
+                                            <div class="submenu-title">
+                                                <h5> Authentication</h5>
+                                            </div>
+                                            <div class="submenu-content opensubmegamenu">
+                                                <ul>
+                                                    <li><a onclick="window.open('@Url.Action("LoginSimple", "Authentication")')" href="#" target="_blank">Login Simple</a></li>
+                                                    <li><a onclick="window.open('@Url.Action("LoginWithBgImage", "Authentication")')" href="#" target="_blank">Login with bg image</a></li>
+                                                    <li><a onclick="window.open('@Url.Action("LoginWithImageTwo", "Authentication")')" href="#" target="_blank">Login with image two </a></li>
+                                                    <li><a onclick="window.open('@Url.Action("LoginWithValidation", "Authentication")')" href="#" target="_blank">Login With validation</a></li>
+                                                    <li><a onclick="window.open('@Url.Action("LoginWithTooltip", "Authentication")')" href="#" target="_blank">Login with tooltip</a></li>
+                                                    <li><a onclick="window.open('@Url.Action("LoginWithSweetalert", "Authentication")')" href="#" target="_blank">Login with sweetalert</a></li>
+                                                    <li><a onclick="window.open('@Url.Action("RegisterSimple", "Authentication")')" href="#" target="_blank">Register Simple</a></li>
+                                                    <li><a onclick="window.open('@Url.Action("RegisterWithBgImage", "Authentication")')" href="#" target="_blank">Register with Bg Image</a></li>
+                                                    <li><a onclick="window.open('@Url.Action("RegisterWithBgVideo", "Authentication")')" href="#" target="_blank">Register with Bg video</a></li>
+                                                    <li><a asp-controller="Authentication" asp-action="UnlockUser">Unlock User</a></li>
+                                                    <li><a asp-controller="Authentication" asp-action="ForgetPassword">Forget Password</a></li>
+                                                    <li><a asp-controller="Authentication" asp-action="CreatPassword">Creat Password</a></li>
+                                                    <li><a asp-controller="Authentication" asp-action="Maintenance">Maintenance</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col mega-box">
+                                        <div class="link-section">
+                                            <div class="submenu-title">
+                                                <h5>Coming Soon</h5>
+                                            </div>
+                                            <div class="submenu-content opensubmegamenu">
+                                                <ul>
+                                                    <li><a asp-controller="ComingSoon" asp-action="ComingSoon">Coming Simple</a></li>
+                                                    <li><a asp-controller="ComingSoon" asp-action="ComingWithBgVideo">Coming with Bg video</a></li>
+                                                    <li><a asp-controller="ComingSoon" asp-action="ComingwithBgImage">Coming with Bg Image</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col mega-box">
+                                        <div class="link-section">
+                                            <div class="submenu-title">
+                                                <h5>Email templates</h5>
+                                            </div>
+                                            <div class="submenu-content opensubmegamenu">
+                                                <ul>
+                                                    <li><a asp-controller="EmailTemplates" asp-action="BasicEmail">Basic Email</a></li>
+                                                    <li><a asp-controller="EmailTemplates" asp-action="BasicWithHeader">Basic With Header</a></li>
+                                                    <li><a asp-controller="EmailTemplates" asp-action="EcomerceTemplate">Ecomerce Template</a></li>
+                                                    <li><a asp-controller="EmailTemplates" asp-action="EmailTemplate2">Email Template 2</a></li>
+                                                    <li><a asp-controller="EmailTemplates" asp-action="EcommerceEmail">Ecommerce Email</a></li>
+                                                    <li><a asp-controller="EmailTemplates" asp-action="OrderSuccess">Order Success</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Miscellaneous </h6>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="image"></i><span>Gallery</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Gallery" asp-action="GalleryGrid">Gallery Grid</a></li>
+                            <li><a asp-controller="Gallery" asp-action="GalleryGridDesc">Gallery Grid Desc</a></li>
+                            <li><a asp-controller="Gallery" asp-action="MasonryGallery">Masonry Gallery</a></li>
+                            <li><a asp-controller="Gallery" asp-action="MasonryWithDesc">Masonry with Desc</a></li>
+                            <li><a asp-controller="Gallery" asp-action="HoverEffects">Hover Effects</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="edit"></i><span>Blog</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Blog" asp-action="BlogDetails">Blog Details</a></li>
+                            <li><a asp-controller="Blog" asp-action="BlogSingle">Blog Single</a></li>
+                            <li><a asp-controller="Blog" asp-action="AddPost">Add Post</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link menu-title link-nav" asp-controller="FAQ" asp-action="FAQ"><i data-feather="help-circle"></i><span>FAQ</span></a></li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="user-check"></i><span>Job Search</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="JobSearch" asp-action="CardsView">Cards view</a></li>
+                            <li><a asp-controller="JobSearch" asp-action="ListView">List View</a></li>
+                            <li><a asp-controller="JobSearch" asp-action="JobDetails">Job Details</a></li>
+                            <li><a asp-controller="JobSearch" asp-action="Apply">Apply</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="layers"></i><span>Learning</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Learning" asp-action="LearningList">Learning List</a></li>
+                            <li><a asp-controller="Learning" asp-action="DetailedCourse">Detailed Course</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="map"></i><span>Maps</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Maps" asp-action="MapJS">Maps JS</a></li>
+                            <li><a asp-controller="Maps" asp-action="VectorMaps">Vector Maps</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="git-pull-request"></i><span>Editors</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Editor" asp-action="SummerNote">Summer Note</a></li>
+                            <li><a asp-controller="Editor" asp-action="CkEditor">CK editor</a></li>
+                            <li><a asp-controller="Editor" asp-action="MDEEditor">MDE editor</a></li>
+                            <li><a asp-controller="Editor" asp-action="ACECodeEditor">ACE code editor</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="database"></i><span>Knowledgebase</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a asp-controller="Knowledge" asp-action="Knowledgebase">Knowledgebase</a></li>
+                            <li><a asp-controller="Knowledge" asp-action="knowledgeCategory">Knowledge category</a></li>
+                            <li><a asp-controller="Knowledge" asp-action="KnowledgeDetail">Knowledge detail</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link menu-title link-nav" asp-controller="SupportTicket" asp-action="SupportTicket"><i data-feather="headphones"></i><span>Support Ticket</span></a></li> *@
+                </ul>
+            </div>
+            <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+        </div>
+    </nav>
+</header>
+<!-- Page Sidebar Ends-->
